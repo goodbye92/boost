@@ -39,7 +39,7 @@ host=`curl -sS v6.icanhazip.com`
 host2=${host::-1}
 	
 ## Full install, config and launch of the nym-mixnode
-for(( i=1; i <=10; i++ ))
+for(( i=1; i <=30; i++ ))
 do
 	cd ~
 	kt='nym'
@@ -152,7 +152,9 @@ do
 	
 	telegram=@dinh31011992${i}
 	printf '%s\n' "${nym}" >> /root/data.txt
+	printf '%s\n' "${telegram}" >> /root/data.txt	
 	printf '%s\n' "[${ahost}]:1789" >> /root/data.txt
+	printf '%s\n' "$(sudo cat /home/${nym}/.nym/mixnodes/NymMixNode/config/config.toml | grep layer | cut -d'=' -f 2)" >> /root/data.txt	
 	printf '%s\n' "echo $(sudo /home/${nym}/nym-mixnode_linux_x86_64  sign --id /home/${nym}/.nym/mixnodes/NymMixNode --text ${telegram} | grep -i "/claim")" >> /root/data.txt
 	printf '%s\n' "" >> /root/data.txt
   	printf '%s\n' "---" >> /root/data.txt	
