@@ -151,7 +151,7 @@ do
 	printf '%s\n' "WantedBy=multi-user.target" >> /etc/systemd/system/${nymmixnode}.service
 	
 	kitu=$(pwgen 13 1)
-	telegram=@kitu
+	telegram=@${kitu}
 	printf '%s\n' "${nym}" >> /root/data.txt
 	printf '%s\n' "${telegram}" >> /root/data.txt	
 	printf '%s\n' "[${ahost}]:1789" >> /root/data.txt
