@@ -153,7 +153,9 @@ do
 	kitu=$(pwgen 13 1)
 	telegram=@${kitu}
 	printf '%s\n' "${nym}" >> /root/data.txt
-	printf '%s\n' "${telegram}" >> /root/data.txt	
+	printf '%s\n' "${telegram}" >> /root/data.txt
+	printf '%s\n' "$(grep -v ^- /home/${nym}/.nym/mixnodes/NymMixNode/data/public_identity.pem |  openssl base64 -A -d | base58 ; echo)" >> /root/data.txt
+	printf '%s\n' "$(grep -v ^- /home/${nym}/.nym/mixnodes/NymMixNode/data/public_sphinx.pem |  openssl base64 -A -d | base58 ; echo)" >> /root/data.txt
 	printf '%s\n' "[${ahost}]:1789" >> /root/data.txt
 	printf '%s\n' "$(sudo cat /home/${nym}/.nym/mixnodes/NymMixNode/config/config.toml | grep layer | cut -d'=' -f 2)" >> /root/data.txt	
 	printf '%s\n' "$(sudo /home/${nym}/nym-mixnode_linux_x86_64  sign --id /home/${nym}/.nym/mixnodes/NymMixNode --text ${telegram} | grep -i "/claim")" >> /root/data.txt
