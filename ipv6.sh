@@ -151,12 +151,12 @@ do
 	printf '%s\n' "WantedBy=multi-user.target" >> /etc/systemd/system/${nymmixnode}.service
 	
 	telegram=@dinh31011992${i}
-	printf '%s\n' "${nym}" >> /root/filedata.txt
-	printf '%s\n' "${ahost}" >> /root/filedata.txt
-	printf '%s\n' "echo $(sudo /home/${nym}/nym-mixnode_linux_x86_64  sign --id /home/${nym}/.nym/mixnodes/NymMixNode --text ${telegram} | grep -i "/claim")" >> /root/filedata.txt
-	printf '%s\n' "" >> /root/filedata.txt
-  printf '%s\n' "---" >> /root/filedata.txt	
-  printf '%s\n' "" >> /root/filedata.txt	
+	printf '%s\n' "${nym}" >> /root/data.txt
+	printf '%s\n' "[${ahost}]:1789" >> /root/data.txt
+	printf '%s\n' "echo $(sudo /home/${nym}/nym-mixnode_linux_x86_64  sign --id /home/${nym}/.nym/mixnodes/NymMixNode --text ${telegram} | grep -i "/claim")" >> /root/data.txt
+	printf '%s\n' "" >> /root/data.txt
+  	printf '%s\n' "---" >> /root/data.txt	
+  	printf '%s\n' "" >> /root/data.txt	
 	if [ -e /etc/systemd/system/${nymmixnode}.service ]
 	then
 	    printf "%b\n\n\n" "${WHITE} --------------------------------------------------------------------------------"
