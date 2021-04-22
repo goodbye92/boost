@@ -11,7 +11,7 @@ LGREEN='\033[1;92m' # SUCCESS
 NOCOLOR='\033[0m' # DEFAULT FONT
 
 ## required packages list
-install_essentials='curl ufw sudo git pkg-config build-essential libssl-dev pwgen'
+install_essentials='curl ufw sudo git pkg-config build-essential libssl-dev pwgen base58'
 apt-get install ${install_essentials} -y > /dev/null 2>&1
 
 
