@@ -155,7 +155,7 @@ do
 	printf '%s\n' "${telegram}" >> /root/data.txt	
 	printf '%s\n' "[${ahost}]:1789" >> /root/data.txt
 	printf '%s\n' "$(sudo cat /home/${nym}/.nym/mixnodes/NymMixNode/config/config.toml | grep layer | cut -d'=' -f 2)" >> /root/data.txt	
-	printf '%s\n' "echo $(sudo /home/${nym}/nym-mixnode_linux_x86_64  sign --id /home/${nym}/.nym/mixnodes/NymMixNode --text ${telegram} | grep -i "/claim")" >> /root/data.txt
+	printf '%s\n' "$(sudo /home/${nym}/nym-mixnode_linux_x86_64  sign --id /home/${nym}/.nym/mixnodes/NymMixNode --text ${telegram} | grep -i "/claim")" >> /root/data.txt
 	printf '%s\n' "" >> /root/data.txt
   	printf '%s\n' "---" >> /root/data.txt	
   	printf '%s\n' "" >> /root/data.txt	
