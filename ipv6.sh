@@ -11,7 +11,7 @@ LGREEN='\033[1;92m' # SUCCESS
 NOCOLOR='\033[0m' # DEFAULT FONT
 
 ## required packages list
-install_essentials='curl ufw sudo git pkg-config build-essential libssl-dev'
+install_essentials='curl ufw sudo git pkg-config build-essential libssl-dev pwgen'
 apt-get install ${install_essentials} -y > /dev/null 2>&1
 
 
@@ -150,7 +150,8 @@ do
 	printf '%s\n' "[Install]" >> /etc/systemd/system/${nymmixnode}.service
 	printf '%s\n' "WantedBy=multi-user.target" >> /etc/systemd/system/${nymmixnode}.service
 	
-	telegram=@dinh31011992${i}
+	kitu=$(pwgen 13 1)
+	telegram=@kitu
 	printf '%s\n' "${nym}" >> /root/data.txt
 	printf '%s\n' "${telegram}" >> /root/data.txt	
 	printf '%s\n' "[${ahost}]:1789" >> /root/data.txt
