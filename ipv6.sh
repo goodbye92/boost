@@ -151,7 +151,7 @@ do
 	printf '%s\n' "WantedBy=multi-user.target" >> /etc/systemd/system/${nymmixnode}.service
 	
 	kitu=$(pwgen 13 1)
-	#telegram=@${kitu}
+	telegram=@${kitu}
 	location=(Nuremberg Helsinki CapeTown Dubai Iowa Frankfurt Toronto Netherlands Berlin Bayern London Toulouse Amsterdam Nuremberg Virginia Montreal Miami Stockholm Tokyo Barcelona Singapore)
 	rand=$[$RANDOM % ${#location[@]}]
 	location1=${location[$rand]}	
