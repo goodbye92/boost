@@ -70,7 +70,7 @@ do
 		then
 			printf "%b\n\n\n" "${WHITE} --------------------------------------------------------------------------------"
 			printf "%b\n\n\n" "${YELLOW} Downloading ${WHITE} ${nymmixnode} binaries for the ${nym} user ..."
-			cd /home/${nym} && curl -LO https://github.com/nymtech/nym/releases/download/v0.10.0/nym-mixnode_linux_x86_64
+			cd /home/${nym} && curl -LO https://github.com/nymtech/nym/releases/download/v0.10.1/nym-mixnode_linux_x86_64
 			printf "%b\n\n\n"
 			printf "%b\n\n\n" "${WHITE} ${nymmixnode} binaries ${LGREEN} successfully downloaded ${WHITE}!"
 		else
@@ -204,7 +204,7 @@ do
     printf "%b\n\n\n"
     printf "%b\n" "${WHITE}                              Check the dashboard"
     printf "%b\n\n\n"
-    printf "%b\n" "${LBLUE}                          https://testnet-explorer.nymtech.net/"
+    printf "%b\n" "${LBLUE}                   https://testnet-finney-validator.nymtech.net"
     printf "%b\n\n\n"
     printf "%b\n\n\n" "${WHITE} --------------------------------------------------------------------------------"
     sleep 10	
