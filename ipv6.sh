@@ -37,7 +37,7 @@ fi
 
 ##Get ipv6
 
-host=`curl -sS v6.icanhazip.com`
+host=`curl -sS ipv6.icanhazip.com`
 host2=${host::-1}
 	
 ## Full install, config and launch of the nym-mixnode
