@@ -23,6 +23,8 @@ printf "%b\n" "0D0A0D0A2020202020205F205F5F20205F2020205F205F205F5F205F5F5F0D0A2
 ## Checks if port 1789 is enabled in firewall settings / ufw
 sudo ufw allow 1789/tcp > /dev/null 2>&1
 sudo ufw allow 22/tcp
+sudo ufw allow 1790
+sudo ufw allow 8000
 sudo ufw --force enable
 sudo ufw status
 
